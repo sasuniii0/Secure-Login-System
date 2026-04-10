@@ -1,0 +1,195 @@
+{
+  "info": {
+    "_postman_id": "af419be6-993a-4d04-8b7c-cda09ec613fb",
+    "name": "Secure-login",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "44983804"
+  },
+  "item": [
+    {
+      "name": "register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"fullName\" : \"Sasuni Wijerathne\",\r\n    \"email\" : \"sasuni@gmail.com\",\r\n    \"password\" : \"Black12*\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\" : \"sasuni@gmail.com\",\r\n    \"password\" : \"Black12*\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "verify-otp",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\" : \"sasuni@gmail.com\",\r\n    \"password\" : \"Black12*\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/verify-otp",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "verify-otp"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createNote",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYXN1bml3aWplcmF0aG5lQGdtYWlsLmNvbSIsImlhdCI6MTc3NTgxMzY3OCwiZXhwIjoxNzc1OTAwMDc4fQ.gm1MZljJ7GDmrvZnYPSmP07QRhTbbOtio2vKSmxYy50",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"title\" : \"Weekly Plan\",\r\n    \"content\" : \"Mon-Fri Ofc\",\r\n    \"category\" : \"OTHER\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/vault/notes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vault",
+            "notes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get all notes",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYXN1bml3aWplcmF0aG5lQGdtYWlsLmNvbSIsImlhdCI6MTc3NTgxMzY3OCwiZXhwIjoxNzc1OTAwMDc4fQ.gm1MZljJ7GDmrvZnYPSmP07QRhTbbOtio2vKSmxYy50",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/vault/notes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vault",
+            "notes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get note by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/vault/notes/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vault",
+            "notes",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
